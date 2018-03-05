@@ -51,7 +51,7 @@
                   // parentTitle = tempData.parent.title;
                   // title = tempData.title;
                   // weatherName = tempData.consolidated_weather[0].weather_state_name;
-                  this.imgUrl = "https://www.metaweather.com/static/img/weather/png/64/" + this.tempData.consolidated_weather[0].weather_state_abbr + ".png"
+                  this.classIcon = "wi-"+ this.tempData.consolidated_weather[0].weather_state_abbr;
                   // loaded = true;
                 })
             })
