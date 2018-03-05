@@ -23,23 +23,25 @@
         _month,
         _date,
         apiKey: "zDq9AGiRTT9NvxAbr",
-        apiUrl: " https://www.metaweather.com/api/location/search/",
+        apiUrl: "https://www.metaweather.com/api/location/search/",
         // https://www.metaweather.com/api/location/search/?lattlong=36.96,-122.02
         tempData: null,
         woeid: null,
         imgUrl: null,
+        proxyurl : "https://cors-anywhere.herokuapp.com/",
+        url : "https://example.com",
 
 
       },
       methods: {
         fetchtemp: function (lat, lang) {
           const url = `${this.apiUrl}?lattlong=${lat},${lat}`;
-          fetch(url)
+          fetch(this.proxyurl+url)
             .then(response => response.json())
             .then(data => {
               this.woeid = data[0].woeid;
               console.log(this.woeid);
-              fetch('https://www.metaweather.com/api/location/' + this.woeid)
+              fetch(this.proxyurl+'https://www.metaweather.com/api/location/' + this.woeid)
                 .then(response => response.json())
                 .then(d => {
                   this.tempData = d;
@@ -67,22 +69,22 @@
           // navigator.geolocation.getCurrentPosition(this.getloc, this.err);
 
 
-      fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDSOEDu7QMY_vRcCZOTVH6kcpii88VLezw', {
-                method: 'POST',
-                // body:JSON.stringify({ coords: { latitude: success.location.lat, longitude: success.location.lng } })
-            }).then((res) => res.json())
-            .then((data) =>  this.getloc(data))
+          fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDSOEDu7QMY_vRcCZOTVH6kcpii88VLezw', {
+            method: 'POST',
+            // body:JSON.stringify({ coords: { latitude: success.location.lat, longitude: success.location.lng } })
+          }).then((res) => res.json())
+            .then((data) => this.getloc(data))
 
         }
 
 
 
-          
-        },
-        created: function () {
-          this.init();
 
-        }
+      },
+      created: function () {
+        this.init();
+
+      }
 
 
-      });
+    });
