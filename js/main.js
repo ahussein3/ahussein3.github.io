@@ -30,6 +30,7 @@
         imgUrl: null,
         proxyurl : "https://cors-anywhere.herokuapp.com/",
         url : "https://example.com",
+        classIcon: null,
 
 
       },
