@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>hello to me future protfolio</title>
+<html lang="en">
 
-  <link rel="stylesheet" href="styles/main.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning Vue Like a Boss!</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+  <link rel="stylesheet" href="css/weather-icons.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- js -->
+  <script src="https://unpkg.com/vue"></script>
 </head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <div id="app" class="weather-widget" v-if="tempData">
+    <div class="temp-card" >
+      <button v-on:click="init()" class="icon is-large refresh-btn">
+        <i class="wi wi-refresh"></i>
+      </button>
+      <div class=" " >
+        <div class="temp-img">
+          <!-- <img src="" alt=""> -->
+          <!-- <img class="" :src="imgUrl"> -->
+          <i class="wi" v-bind:class=" [classIcon]"></i>
+        </div>
+        <div class="temp-text">
+          <div class=" is-one-quarter temp-deg">{{Math.round(tempData.consolidated_weather[0].the_temp)}}&#x00B0;</div>
+          <div class="temp-text-container">
+            <p class=" temp-desc">{{tempData.consolidated_weather[0].weather_state_name}}</p>
+            <p class=" temp-loc">{{tempData.title}}, {{tempData.parent.title}}</p>
+          </div>
+        </div>
+        <div class="date">
+          <p class="month">{{_month}}</p>
+          <p class="day">{{_date}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="temp-info">
+      <div class="columns">
+        <div class="column">
+          <i class="wi wi-strong-wind"></i>
+          <span>{{Math.round(tempData.consolidated_weather[0].wind_speed)}}mbar</span>
+        </div>
+        <div class="column">
+          <i class="wi wi-humidity"></i>
+          <span>{{tempData.consolidated_weather[0].humidity}}%</span>
+         
+        </div>
+        <div class="column">
+          <i class="wi wi-windy"></i>
+          <span>{{Math.round(tempData.consolidated_weather[0].air_pressure)}}mbar</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </body>
+
+<script src="js/main.js"></script>
+
 </html>
