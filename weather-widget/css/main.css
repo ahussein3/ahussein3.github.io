@@ -1,0 +1,138 @@
+body {
+    background-color: #424951;
+    height: 1000px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .weather-widget {
+    height: 660px;
+    width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -330px 0 0 -275px;
+    box-sizing: content-box;
+    border-radius: 25px;
+    box-shadow: 6px 4px 20px 3px #06060640;
+  }
+  .weather-widget i{
+      font-size: 30px;
+  }
+
+  .temp-card,
+  .temp-info {
+    box-sizing: border-box;
+
+  }
+
+  .temp-card {
+    background-color: #fff;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 75%;
+    padding: 30px;
+
+
+  }
+
+  .refresh-btn {
+    position: absolute;
+    right: 25px;
+    color: #88979a;
+    border: 0;
+    background-color: #fff;
+  }
+
+  .refresh-btn :hover {
+    cursor: pointer;
+  }
+
+  .refresh-btn>i {
+    /* transform: scale(-1, 1); */
+    /* animation: rotation 2s infinite linear;
+    animation-play-state: paused;  */
+    font-size: 60px;
+  }
+
+  .refresh-btn>i:hover {
+    animation: roll 3s infinite linear;
+  }
+
+  @keyframes roll {
+    from {
+      transform: rotate(0deg) ;
+    }
+    to {
+      transform: rotate(360deg) ;
+    }
+  }
+
+
+
+
+  .temp-img {
+    text-align: center;
+    padding-top: 125px;
+    padding-bottom: 40px;
+    color: #88979a;
+  }
+  .temp-img i {
+      font-size: 150px
+  }
+
+  .temp-info {
+    background-color: #2e3336;
+    height: 25%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 65px 20px;
+
+  }
+
+  .temp-text>div {
+    display: inline-block
+  }
+
+  .temp-deg {
+    padding: 15px;
+    font-size: 75px;
+    color: #88979a;
+  }
+
+  .temp-desc {
+    font-size: 40px;
+    color: #88979a;
+    font-weight: 100;
+  }
+
+  .temp-text-container>p {
+    margin-bottom: 0;
+    line-height: 1.1;
+  }
+
+  .temp-loc {
+    color: #88979a;
+    font-size: 23px;
+    font-weight: 500;
+
+  }
+
+  .date {
+    background-color: #03a9f4f0;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 190px;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    padding-top: 18px;
+    font-weight: 500;
+  }
+  .temp-info span {
+    color: #fff;
+    font-size: 25px;
+    vertical-align: bottom;
+    font-weight: 100;
+  }
