@@ -46,6 +46,9 @@ body {
   .refresh-btn :hover {
     cursor: pointer;
   }
+  .refresh-btn :focus{
+    outline: none;
+}
 
   .refresh-btn>i {
     /* transform: scale(-1, 1); */
