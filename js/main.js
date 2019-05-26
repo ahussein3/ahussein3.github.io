@@ -14,14 +14,14 @@ month[10] = "Nov";
 month[11] = "Dec";
 
 let date = new Date;
-let _month = month[date.getMonth()];
-let _date = date.getDate();
+let Month = month[date.getMonth()];
+let Date = date.getDate();
 
 var app = new Vue({
   el: '#app',
   data: {
-    month,
-    date,
+    Month,
+    Date,
     apiKey: "zDq9AGiRTT9NvxAbr",
     apiUrl: "https://www.metaweather.com/api/location/search/",
     // https://www.metaweather.com/api/location/search/?lattlong=36.96,-122.02
