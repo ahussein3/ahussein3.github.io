@@ -16,11 +16,11 @@
 
 <body>
   <div id="app" class="weather-widget" v-if="tempData">
-    <div class="temp-card" >
+    <div class="temp-card">
       <button v-on:click="init()" class="icon is-large refresh-btn">
         <i class="wi wi-refresh"></i>
       </button>
-      <div class=" " >
+      <div class=" ">
         <div class="temp-img">
           <!-- <img src="" alt=""> -->
           <!-- <img class="" :src="imgUrl"> -->
@@ -34,8 +34,8 @@
           </div>
         </div>
         <div class="date">
-          <p class="month">{{_month}}</p>
-          <p class="day">{{_date}}</p>
+          <p class="month">{{month}}</p>
+          <p class="day">{{date}}</p>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
         <div class="column">
           <i class="wi wi-humidity"></i>
           <span>{{tempData.consolidated_weather[0].humidity}}%</span>
-         
+
         </div>
         <div class="column">
           <i class="wi wi-windy"></i>
